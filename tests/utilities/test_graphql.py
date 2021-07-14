@@ -473,9 +473,9 @@ class TestFormatGraphQLResponseError:
 
     def test_empty_error_does_not_throw_exception(self):
         response = TestFormatGraphQLResponseError.make_response(params={}, content={})
-        print ("Response content for empty_error_does_not_throw_exception")
-        print (response._content)
-        print (type(response._content))
+        print("Response content for empty_error_does_not_throw_exception")
+        print(response._content)
+        print(type(response._content))
         message = format_graphql_request_error(response)
         assert "The server did not provide any error messages" in message
 
@@ -483,9 +483,9 @@ class TestFormatGraphQLResponseError:
         response = TestFormatGraphQLResponseError.make_response(
             params={"query": "example query", "variables": "variable"}, content={}
         )
-        print ("Response content for displays_query_and_variables")
-        print (response._content)
-        print (type(response._content))
+        print("Response content for displays_query_and_variables")
+        print(response._content)
+        print(type(response._content))
         message = format_graphql_request_error(response)
         assert (
             dedent(
